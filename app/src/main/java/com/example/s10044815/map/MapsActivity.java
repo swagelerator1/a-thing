@@ -63,7 +63,8 @@ public class MapsActivity extends FragmentActivity {
      * This should only be called once and when we are sure that {@link #mMap} is not null.
      */
     private void setUpMap() {
-        mMap.addMarker(new MarkerOptions().position(new LatLng(0, 0)).title("Marker").icon(BitmapDescriptorFactory.fromResource(R.drawable.moarbob)));
-
+        mMap.addMarker(new MarkerOptions().position(new LatLng(36.167505, -115.341880)).title("Marker").icon(BitmapDescriptorFactory.fromResource(R.drawable.boby)));
+    mMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
+    mMap.setIndoorEnabled(true);
     }
 }
