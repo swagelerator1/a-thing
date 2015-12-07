@@ -12,6 +12,12 @@ import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 public class MapsActivity extends FragmentActivity {
+Marker correctCity;
+    Marker NewYork;
+    Marker Chicago;
+    Marker Austin;
+   /Marker LasVegas;
+    //Marker correctCity;
 
     private GoogleMap mMap; // Might be null if Google Play services APK is not available.
 
@@ -63,7 +69,10 @@ public class MapsActivity extends FragmentActivity {
      * This should only be called once and when we are sure that {@link #mMap} is not null.
      */
     private void setUpMap() {
-        mMap.addMarker(new MarkerOptions().position(new LatLng(36.167505, -115.341880)).title("Marker").icon(BitmapDescriptorFactory.fromResource(R.drawable.boby)));
+     NewYork =  mMap.addMarker(new MarkerOptions().position(new LatLng(40, -74)).title("New York").icon(BitmapDescriptorFactory.fromResource(R.drawable.boby)).snippet("Pizza, Empire state!!!!"));
+        Chicago =  mMap.addMarker(new MarkerOptions().position(new LatLng(41.88, -87.63)).title("Chicago").icon(BitmapDescriptorFactory.fromResource(R.drawable.boby)).snippet("Windybreaking city"));
+        Austin =  mMap.addMarker(new MarkerOptions().position(new LatLng(30.25, 97.75)).title("Austin").icon(BitmapDescriptorFactory.fromResource(R.drawable.boby)).snippet("My house, in the middle of town, my house..."));
+        LasVegas =  mMap.addMarker(new MarkerOptions().position(new LatLng(36.1215, 115.1739)).title("Las Vegas").icon(BitmapDescriptorFactory.fromResource(R.drawable.boby)).snippet("casinos and ryan"));
     mMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
     mMap.setIndoorEnabled(true);
     }
