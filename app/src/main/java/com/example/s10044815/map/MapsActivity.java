@@ -2,6 +2,7 @@ package com.example.s10044815.map;
 
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+import android.widget.Toast;
 
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.SupportMapFragment;
@@ -16,8 +17,8 @@ Marker correctCity;
     Marker NewYork;
     Marker Chicago;
     Marker Austin;
-   /Marker LasVegas;
-    //Marker correctCity;
+   Marker LasVegas;
+    Marker Detroit;
 
     private GoogleMap mMap; // Might be null if Google Play services APK is not available.
 
@@ -69,11 +70,14 @@ Marker correctCity;
      * This should only be called once and when we are sure that {@link #mMap} is not null.
      */
     private void setUpMap() {
-     NewYork =  mMap.addMarker(new MarkerOptions().position(new LatLng(40, -74)).title("New York").icon(BitmapDescriptorFactory.fromResource(R.drawable.boby)).snippet("Pizza, Empire state!!!!"));
-        Chicago =  mMap.addMarker(new MarkerOptions().position(new LatLng(41.88, -87.63)).title("Chicago").icon(BitmapDescriptorFactory.fromResource(R.drawable.boby)).snippet("Windybreaking city"));
-        Austin =  mMap.addMarker(new MarkerOptions().position(new LatLng(30.25, 97.75)).title("Austin").icon(BitmapDescriptorFactory.fromResource(R.drawable.boby)).snippet("My house, in the middle of town, my house..."));
-        LasVegas =  mMap.addMarker(new MarkerOptions().position(new LatLng(36.1215, 115.1739)).title("Las Vegas").icon(BitmapDescriptorFactory.fromResource(R.drawable.boby)).snippet("casinos and ryan"));
+     NewYork =  mMap.addMarker(new MarkerOptions().position(new LatLng(40, -74)).title("New York").icon(BitmapDescriptorFactory.fromResource(R.drawable.moarbob)).snippet("Pizza, Empire state!!!!"));
+        Chicago =  mMap.addMarker(new MarkerOptions().position(new LatLng(41.88, -87.63)).title("Chicago").icon(BitmapDescriptorFactory.fromResource(R.drawable.moarbob)).snippet("Windybreaking city"));
+        Austin =  mMap.addMarker(new MarkerOptions().position(new LatLng(30.25, -97.75)).title("Austin").icon(BitmapDescriptorFactory.fromResource(R.drawable.moarbob)).snippet("My house, in the middle of town, my house..."));
+        LasVegas =  mMap.addMarker(new MarkerOptions().position(new LatLng(36.1215, -115.1739)).title("Las Vegas").icon(BitmapDescriptorFactory.fromResource(R.drawable.moarbob)).snippet("casinos and ryan"));
+        Detroit =  mMap.addMarker(new MarkerOptions().position(new LatLng(42.3314, -83.058)).title("Detroit").icon(BitmapDescriptorFactory.fromResource(R.drawable.moarbob)).snippet("baysball"));
     mMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
     mMap.setIndoorEnabled(true);
+        correctCity = LasVegas;
+
     }
 }
