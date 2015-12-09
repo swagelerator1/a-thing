@@ -78,7 +78,8 @@ Marker correctCity;
     mMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
     mMap.setIndoorEnabled(true);
         correctCity = LasVegas;
-
+        Toast gud = Toast.makeText(MapsActivity.this, "krazy rian waz heere", Toast.LENGTH_LONG);
+        gud.show();
         mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
             @Override
             public boolean onMarkerClick(Marker marker) {
@@ -106,7 +107,9 @@ Marker correctCity;
                         Toast gud = Toast.makeText(MapsActivity.this, "yooo weeen", Toast.LENGTH_LONG);
                         gud.show();
                         correctCity = NewYork;
+
                     }
+
                 if (!marker.equals(correctCity)){
                     Toast gud = Toast.makeText(MapsActivity.this, "rong", Toast.LENGTH_LONG);
                     gud.show();
