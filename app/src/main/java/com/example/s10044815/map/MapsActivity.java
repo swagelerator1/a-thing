@@ -79,5 +79,43 @@ Marker correctCity;
     mMap.setIndoorEnabled(true);
         correctCity = LasVegas;
 
+        mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
+            @Override
+            public boolean onMarkerClick(Marker marker) {
+                if (marker.equals(correctCity)&&marker.equals(LasVegas)) {
+                   Toast gud = Toast.makeText(MapsActivity.this, "the next place place is huuuuge", Toast.LENGTH_LONG);
+                    gud.show();
+                    correctCity = NewYork;
+                }
+                if (marker.equals(correctCity)&&marker.equals(NewYork)) {
+                    Toast gud = Toast.makeText(MapsActivity.this, "this place went bamkrupted", Toast.LENGTH_LONG);
+                    gud.show();
+                    correctCity = Detroit;
+                }
+                if (marker.equals(correctCity)&&marker.equals(Detroit)) {
+                    Toast gud = Toast.makeText(MapsActivity.this, "east side pies is here", Toast.LENGTH_LONG);
+                    gud.show();
+                    correctCity = Austin;
+                }
+                if (marker.equals(correctCity)&&marker.equals(Austin)) {
+                    Toast gud = Toast.makeText(MapsActivity.this, "next and last is windy", Toast.LENGTH_LONG);
+                    gud.show();
+                    correctCity = Chicago;
+                }
+                    if (marker.equals(correctCity)&&marker.equals(Chicago)) {
+                        Toast gud = Toast.makeText(MapsActivity.this, "yooo weeen", Toast.LENGTH_LONG);
+                        gud.show();
+                        correctCity = NewYork;
+                    }
+                if (!marker.equals(correctCity)){
+                    Toast gud = Toast.makeText(MapsActivity.this, "rong", Toast.LENGTH_LONG);
+                    gud.show();
+                }
+
+                return false;
+            }
+        });
     }
-}
+    }
+
+
