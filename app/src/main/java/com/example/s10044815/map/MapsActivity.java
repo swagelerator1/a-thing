@@ -1,5 +1,6 @@
 package com.example.s10044815.map;
 
+import android.media.MediaPlayer;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.widget.Toast;
@@ -19,6 +20,7 @@ Marker correctCity;
     Marker Austin;
    Marker LasVegas;
     Marker Detroit;
+    Marker odly;
 
     private GoogleMap mMap; // Might be null if Google Play services APK is not available.
 
@@ -84,34 +86,46 @@ Marker correctCity;
             @Override
             public boolean onMarkerClick(Marker marker) {
                 if (marker.equals(correctCity)&&marker.equals(LasVegas)) {
-                   Toast gud = Toast.makeText(MapsActivity.this, "the next place place is huuuuge", Toast.LENGTH_LONG);
-                    gud.show();
                     correctCity = NewYork;
+                    odly=LasVegas;
+                    Toast gud = Toast.makeText(MapsActivity.this, "the next place place is huuuuge", Toast.LENGTH_LONG);
+                    gud.show();
+
                 }
                 if (marker.equals(correctCity)&&marker.equals(NewYork)) {
+                    correctCity = Detroit;
+                    odly=NewYork;
                     Toast gud = Toast.makeText(MapsActivity.this, "this place went bamkrupted", Toast.LENGTH_LONG);
                     gud.show();
-                    correctCity = Detroit;
+
                 }
                 if (marker.equals(correctCity)&&marker.equals(Detroit)) {
+                    correctCity = Austin;
+                    odly=Detroit;
                     Toast gud = Toast.makeText(MapsActivity.this, "east side pies is here", Toast.LENGTH_LONG);
                     gud.show();
-                    correctCity = Austin;
+
                 }
                 if (marker.equals(correctCity)&&marker.equals(Austin)) {
+                    correctCity = Chicago;
+                    odly=Austin;
                     Toast gud = Toast.makeText(MapsActivity.this, "next and last is windy", Toast.LENGTH_LONG);
                     gud.show();
-                    correctCity = Chicago;
+
                 }
                     if (marker.equals(correctCity)&&marker.equals(Chicago)) {
+                        correctCity = NewYork;
+                        odly=Chicago;
                         Toast gud = Toast.makeText(MapsActivity.this, "yooo weeen", Toast.LENGTH_LONG);
                         gud.show();
-                        correctCity = NewYork;
-
+                        setContentView(R.layout.dun);
+                        MediaPlayer mediaPlayer = MediaPlayer.create(MapsActivity.this, R.raw.klimba);
+                        mediaPlayer.setLooping(true);
+                        mediaPlayer.start(); // no need to call prepare(); create() does that for you
                     }
 
-                if (!marker.equals(correctCity)){
-                    Toast gud = Toast.makeText(MapsActivity.this, "rong", Toast.LENGTH_LONG);
+                if (!marker.equals(correctCity) | !marker.equals(odly)){
+                    Toast gud = Toast.makeText(MapsActivity.this, "rong", Toast.LENGTH_SHORT);
                     gud.show();
                 }
 
